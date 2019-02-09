@@ -1,0 +1,34 @@
+// @mixin overlay {
+//   position: absolute;
+//   bottom: 0;
+//   left: 0;
+//   right: 0;
+//   top: 0;
+
+//   background-color: rgba(40,40,40,0.65);
+//   opacity: 0;
+//   @include transition;
+
+//   &:hover {
+//     opacity: 1;
+//   }
+
+//   div {
+//     @include center("both");
+
+//     height: 64px;
+//     width: 64px;
+
+//     text-align: center;
+
+//     background-color: orange(5);
+//     border-radius: 50%;
+
+//     span,
+//     svg {
+//       @include center("both");
+
+//       color: gray(1);
+//     }
+//   }
+// }

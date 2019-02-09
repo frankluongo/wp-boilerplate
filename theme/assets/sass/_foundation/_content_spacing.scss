@@ -1,0 +1,6 @@
+@mixin content-spacing {
+  margin-top: space(medium);
+
+  @include breakpoint (medium) { margin-top: space(large); }
+  @include breakpoint (large) { margin-top: space(xlarge); }
+}

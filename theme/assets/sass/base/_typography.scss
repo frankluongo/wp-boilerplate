@@ -1,0 +1,12 @@
+// RESET
+  h1, h2, h3, h4, h5, h6, p, small, blockquote {
+    margin: 0;
+    padding: 0;
+  }
+
+// FONT STYLES
+  h1 { @include h1; }
+  h2 { @include h2; }
+  h3 { @include h3; }
+  p { @include paragraph; }
+  small { @include small; }

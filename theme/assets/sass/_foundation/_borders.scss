@@ -1,0 +1,5 @@
+@mixin top-border {
+  padding-top: space(large);
+
+  border-top: 2px solid gray(4);
+}

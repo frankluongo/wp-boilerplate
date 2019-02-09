@@ -1,0 +1,17 @@
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+_DS_Store
+
+# Folders  to Ignore
+.sass-cache
+.vscode
+node_modules
+wordpress
+backups

@@ -1,0 +1,37 @@
+$breakpoint-sizes: (
+  xsmall: 0,
+  small: 640px,
+  medium: 960px,
+  large: 1280px
+);
+
+@function max-size($breakpoint-value) {
+  @return (map-get($breakpoint-sizes, $breakpoint-value)-1)
+}
+
+$breakpoints: (
+  xsmall: 0,
+  xsmall only: (0, max-size(small) ),
+  small: map-get($breakpoint-sizes, small),
+  small only: (map-get($breakpoint-sizes, small), max-size(small) ),
+  medium: map-get($breakpoint-sizes, medium),
+  medium down: (0, max-size(medium)),
+  medium only: (map-get($breakpoint-sizes, medium), max-size(small) ),
+  large: map-get($breakpoint-sizes, large)
+);
+
+@mixin breakpoint($break) {
+  @each $breakpoint, $value in $breakpoints {
+    @if ($break == $breakpoint) {
+      @if type-of($value) == list {
+        @media screen and (min-width: nth($value, 1)) and (max-width: nth($value, 2)) {
+          @content;
+        }
+      } @else {
+        @media screen and (min-width: $value) {
+          @content;
+        }
+      }
+    }
+  }
+}

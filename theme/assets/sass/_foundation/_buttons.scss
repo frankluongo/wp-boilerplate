@@ -1,0 +1,56 @@
+// @mixin button-base {
+//   &[disabled] {
+//   }
+// }
+
+
+// @mixin button($type: orange) {
+
+//   @if $type == orange {
+//     color: gray(1);
+//     background-color: orange(5);
+//     border: 1px solid orange(5);
+
+//     &:hover {
+//       color: gray(1);
+
+//       background-color: orange(7);
+//       border: 1px solid orange(7);
+//     }
+//   }
+
+//   @if $type == outline {
+//     color: orange(5);
+//     background-color: transparent;
+//     border: 2px solid orange(5);
+
+//     &:hover {
+//       color: gray(1);
+//       background-color: orange(5);
+//       border: 2px solid orange(5);
+//     }
+//   }
+
+//   @if $type == outline-white {
+//     color: gray(1);
+//     background-color: transparent;
+//     border: 2px solid gray(1);
+
+//     &:hover {
+//       color: orange(1);
+//       background-color: gray(1);
+//       border: 2px solid gray(1);
+//     }
+//   }
+
+//   @if $type == white {
+//     color: orange(1);
+//     background-color: gray(1);
+//     border: 1px solid gray(1);
+
+//     &:hover {
+//       color: gray(1);
+//       background-color: orange(5);
+//     }
+//   }
+// }

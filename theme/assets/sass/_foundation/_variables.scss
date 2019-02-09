@@ -1,0 +1,18 @@
+// Constants
+  $SU: 8px;
+  $MNH: 36px;
+
+  $spacing: (
+    xxsmall: $SU/2,
+    xsmall:  $SU,
+    small:   $SU*2, // 16
+    smedium: $SU*3, // 24
+    medium:  $SU*4,
+    large:   $SU*8,
+    xlarge:  $SU*12,
+    xxlarge: $SU*16
+  );
+
+  @function space($value) {
+    @return map-get($spacing, $value);
+  }

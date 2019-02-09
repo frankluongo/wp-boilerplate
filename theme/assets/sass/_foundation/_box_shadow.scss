@@ -1,0 +1,7 @@
+@mixin box-shadow($h-offset: 0, $v-offset: 10px, $blur: 15px, $spread: false, $color: rgba(74,74,74,.04)) {
+  @if $spread {
+    box-shadow: $h-offset $v-offset $blur $spread $color;
+  } @else {
+    box-shadow: $h-offset $v-offset $blur $color;
+  }
+}
