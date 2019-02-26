@@ -1,42 +1,81 @@
-//
-// BASE COLORS
-//
+// * BASE COLORS
+// ? ----------------------------------
 
-$gold: #e1dec9;
+$base-green: #14B37D;
+$base-orange: #FC6106;
 
-// FULL COLOR PALETTES
-$golds: (
-  1: $gold,
-  2: $gold,
-  3: $gold,
-  4: $gold,
-  5: $gold,
-  6: $gold,
-  7: $gold,
-  8: $gold,
-  9: $gold
+
+// * FULL COLOR PALETTES
+// ? ----------------------------------
+
+$green: (
+  1: lighten($base-green, 20),
+  2: lighten($base-green, 12),
+  3: lighten($base-green, 9),
+  4: lighten($base-green, 6),
+  5: $base-green,
+  6: darken($base-green, 6),
+  7: darken($base-green, 9),
+  8: darken($base-green, 12),
+  9: darken($base-green, 15)
+);
+
+$orange: (
+  1: lighten($base-orange, 20),
+  2: lighten($base-orange, 12),
+  3: lighten($base-orange, 9),
+  4: lighten($base-orange, 6),
+  5: $base-orange,
+  6: adjust-hue($base-orange, -4),
+  7: adjust-hue($base-orange, -8),
+  8: adjust-hue($base-orange, -10),
+  9: adjust-hue($base-orange, -15)
 );
 
 $grays: (
   1: #ffffff,
-  2: #f1f1f2,
-  3: #bbbcbf,
-  4: #a7a9ac,
-  5: #8e8f92,
-  6: lighten(#2A2A2A, 30),
-  7: lighten(#2A2A2A, 20),
-  8: lighten(#2A2A2A, 10),
-  9: #2A2A2A
+  2: lighten(#9E9E9E, 35),
+  3: lighten(#9E9E9E, 30),
+  4: lighten(#9E9E9E, 20),
+  5: #9E9E9E,
+  6: darken(#9E9E9E, 20),
+  7: #424242,
+  8: #212121,
+  9: #000000
 );
 
-//
-// FUNCTIONS
-//
+// * FUNCTIONS
+// ? ----------------------------------
 
-@function gold($num) {
-  @return map-get($golds, $num);
+@function green($num) {
+  @return map-get($green, $num);
+}
+
+@function orange($num) {
+  @return map-get($orange, $num);
 }
 
 @function gray($num) {
   @return map-get($grays, $num);
 }
+
+/*
+
+For When you need to test colors
+
+.boxes {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+}
+
+.box {
+  padding-top: 100%;
+
+  @each $num, $_color in $orange {
+    &--#{$num} {
+      background-color: orange($num);
+    }
+  }
+}
+
+*/
