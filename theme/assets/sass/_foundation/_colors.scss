@@ -47,35 +47,14 @@ $grays: (
 // * FUNCTIONS
 // ? ----------------------------------
 
-@function green($num) {
+@function green($num: 5) {
   @return map-get($green, $num);
 }
 
-@function orange($num) {
+@function orange($num: 5) {
   @return map-get($orange, $num);
 }
 
-@function gray($num) {
+@function gray($num: 5) {
   @return map-get($grays, $num);
 }
-
-/*
-
-For When you need to test colors
-
-.boxes {
-  display: grid;
-  grid-template-columns: repeat(9, 1fr);
-}
-
-.box {
-  padding-top: 100%;
-
-  @each $num, $_color in $orange {
-    &--#{$num} {
-      background-color: orange($num);
-    }
-  }
-}
-
-*/

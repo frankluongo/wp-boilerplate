@@ -1,3 +1,6 @@
-// .layout {
+.layout {
 
-// }
+  & + & {
+    @include content-spacing;
+  }
+}

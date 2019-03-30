@@ -1,5 +1,21 @@
 $total-columns: 12;
 
+@mixin grid-creator($i) {
+  @if $i == 1 {
+    grid-template-columns: 1fr;
+  }
+  @else {
+    grid-template-columns: repeat(#{$i}, 1fr);
+  }
+}
+
+@mixin grid-row($gap: space(small)) {
+  display: grid;
+  grid-gap: $gap;
+
+  margin: 0 auto;
+}
+
 @mixin clearfix {
   &:after {
     content: '';
@@ -28,6 +44,23 @@ $total-columns: 12;
   position: relative;
 
   float: left;
+  margin-bottom: space(small);
+  padding-left: space(xsmall);
+  padding-right: space(xsmall);
+}
+
+@mixin flex-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@mixin flex-col {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
   margin-bottom: space(small);
   padding-left: space(xsmall);
   padding-right: space(xsmall);

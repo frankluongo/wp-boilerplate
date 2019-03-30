@@ -5,3 +5,38 @@
     box-shadow: $h-offset $v-offset $blur $color;
   }
 }
+
+
+.boxes {
+  display: grid;
+  padding: space(small);
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: space(small);
+}
+
+.box {
+  padding-top: 100%;
+}
+
+$elevations: (
+  1: (0, 15px, 0px, rgba(0, 0, 0, 0.05)),
+  2: (0, 15px, 0px, rgba(0, 0, 0, 0.075)),
+  3: (0, 15px, 0px, rgba(0, 0, 0, 0.1)),
+  4: (0, 15px, 0px, rgba(0, 0, 0, 0.125)),
+  5: (1px, 15px, 0px, rgba(0, 0, 0, 0.15)),
+  6: (2px, 15px, 0px, rgba(0, 0, 0, 0.175)),
+  7: (3px, 15px, 0px, rgba(0, 0, 0, 0.2)),
+  8: (4px, 15px, 0px, rgba(0, 0, 0, 0.225)),
+  9: (5px, 15px, 0px, rgba(0, 0, 0, 0.25))
+);
+
+@each $elevation, $details in $elevations {
+  $vertical-offset: nth($details, 1);
+  $blur: nth($details, 2);
+  $spread: nth($details, 3);
+  $color: nth($details, 4);
+
+  .elevation-#{$elevation} {
+    box-shadow: 0 $vertical-offset $blur $spread $color;
+  }
+}

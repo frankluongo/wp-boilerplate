@@ -120,7 +120,7 @@ if (function_exists('add_theme_support')) {
   // Remove <p> tags from Excerpt
   remove_filter('the_excerpt', 'wpautop');
   // Remove <p> tags from Content
-  remove_filter( 'the_content', 'wpautop' );
+  // remove_filter( 'the_content', 'wpautop' );
 
 // Shortcodes
 // ? --------------------------------------------------------------------------

@@ -2,22 +2,34 @@ $breakpoint-sizes: (
   xsmall: 0,
   small: 640px,
   medium: 960px,
-  large: 1280px
+  large: 1280px,
+  xlarge: 1440px,
 );
 
+@function breakpoint($size) {
+  @return map-get($breakpoint-sizes, $size);
+}
+
 @function max-size($breakpoint-value) {
-  @return (map-get($breakpoint-sizes, $breakpoint-value)-1)
+  @return (breakpoint($breakpoint-value) - 1)
 }
 
 $breakpoints: (
   xsmall: 0,
   xsmall only: (0, max-size(small) ),
-  small: map-get($breakpoint-sizes, small),
-  small only: (map-get($breakpoint-sizes, small), max-size(small) ),
-  medium: map-get($breakpoint-sizes, medium),
+
+  small: breakpoint(small),
+  small only: (breakpoint(small), max-size(medium) ),
+
+  medium: breakpoint(medium),
   medium down: (0, max-size(medium)),
-  medium only: (map-get($breakpoint-sizes, medium), max-size(small) ),
-  large: map-get($breakpoint-sizes, large)
+  medium only: (breakpoint(medium), max-size(large) ),
+
+  large: breakpoint(large),
+  large down: ( 0, breakpoint(large) ),
+  large only: (breakpoint(large), max-size(xlarge)),
+
+  xlarge: breakpoint(xlarge),
 );
 
 @mixin breakpoint($break) {

@@ -1,3 +1,7 @@
+.container {
+  @include container;
+}
+
 .row {
   @include row;
 
@@ -11,6 +15,18 @@
 
   &--full {
     float: left;
+  }
+}
+
+.grid-row { @include grid-row }
+
+@each $break, $value in $breakpoint-sizes {
+  @include breakpoint($break) {
+    @for $i from 1 through 6 {
+      .grid-row-#{$break}-#{$i} {
+        @include grid-creator($i);
+      }
+    }
   }
 }
 
